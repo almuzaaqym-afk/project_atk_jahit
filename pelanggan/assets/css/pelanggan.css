@@ -1,0 +1,494 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fa;color:#263238;line-height:1.5}
+.navbar{background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:1000}
+.user-navbar{background:#102a43;color:#fff}
+.nav-container{max-width:1200px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#102a43}
+.user-navbar .brand{color:#fff}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand strong,.brand small{display:block}.brand strong{font-size:16px}.brand small{font-size:11px;color:#7b8794}.user-navbar .brand small{color:#bcccdc}
+.nav-menu{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.nav-menu a{padding:9px 11px;text-decoration:none;color:#334e68;font-size:13px;border-radius:6px}
+.user-navbar .nav-menu a{color:#d9e2ec}
+.nav-menu a:hover{background:#f0f4f8;color:#102a43}
+.user-navbar .nav-menu a:hover{background:#183b56;color:#fff}
+.nav-login,.nav-logout{background:#102a43!important;color:#fff!important}
+.nav-register{border:1px solid #102a43}
+.nav-logout{background:#fff!important;color:#102a43!important}
+.customer-name{font-size:12px;padding:8px;color:#fff}
+main{min-height:60vh}.hero{max-width:1200px;margin:auto;padding:90px 20px;display:flex;align-items:center}
+.hero h1{max-width:720px;font-size:42px;line-height:1.15;color:#102a43;margin:12px 0 18px}
+.hero p{max-width:650px;color:#627d98;margin-bottom:28px}
+.eyebrow{font-size:11px;font-weight:bold;letter-spacing:1.5px;color:#486581}
+.hero-actions,.product-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary,.btn-outline{display:inline-block;padding:11px 18px;border-radius:7px;text-decoration:none;cursor:pointer;font-weight:bold;font-size:13px}
+.btn-primary{background:#102a43;color:#fff;border:1px solid #102a43}.btn-outline{background:#fff;color:#102a43;border:1px solid #102a43}.full{width:100%}
+.section{max-width:1200px;margin:auto;padding:55px 20px}.section-heading{margin-bottom:25px}.section h1,.section h2{color:#102a43}.section h1{font-size:32px;margin:8px 0}.section h2{font-size:25px}
+.muted{color:#627d98}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:25px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:24px}.card h3{color:#102a43;margin-bottom:8px}.card p{color:#627d98;font-size:13px}.card-link{text-decoration:none}.user-welcome{padding-top:55px}
+.product-detail{background:#fff;margin-top:40px;border:1px solid #e5e7eb;border-radius:12px}.product-detail h1{margin:10px 0}.product-detail h2{margin:10px 0;color:#102a43}.product-detail p{max-width:700px;color:#627d98;margin-bottom:25px}
+.site-footer{margin-top:60px;background:#102a43;color:#fff}.footer-container{max-width:1200px;margin:auto;padding:42px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.footer-logo{width:48px;height:48px;object-fit:contain}.footer-container h3,.footer-container h4{margin:7px 0 12px}.footer-container p{color:#bcccdc;font-size:13px;line-height:1.7}.footer-container a{display:block;color:#d9e2ec;text-decoration:none;font-size:13px;margin-bottom:8px}.footer-container a:hover{color:#fff}.footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.15);padding:15px;color:#9fb3c8;font-size:11px}
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}.auth-card{width:100%;max-width:400px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:32px}.auth-logo{display:block;text-align:center}.auth-logo img{width:65px;height:65px;object-fit:contain}.auth-card h1{text-align:center;color:#102a43;margin:12px 0 5px;font-size:22px}.auth-card .muted{text-align:center;margin-bottom:22px;font-size:13px}.auth-card label{display:block;font-size:13px;font-weight:bold;margin:14px 0 6px}.auth-card input{width:100%;padding:12px;border:1px solid #d9e2ec;border-radius:7px;outline:none}.auth-card input:focus{border-color:#102a43}.alert,.success{padding:10px;border-radius:7px;font-size:12px;margin-bottom:14px}.alert{background:#fff0f0;color:#c53030}.success{background:#eefbf3;color:#26734d}.auth-bottom{text-align:center;margin-top:18px;font-size:12px;color:#7b8794}.auth-bottom a,.back-link{color:#102a43;font-weight:bold;text-decoration:none}.back-link{display:block;text-align:center;margin-top:15px;font-size:12px}
+@media(max-width:768px){.nav-container{flex-direction:column;align-items:flex-start}.nav-menu{width:100%}.hero h1{font-size:32px}.footer-container{grid-template-columns:1fr}}
+/* =========================
+   KATALOG PRODUK
+========================= */
+
+.katalog-section{
+    padding-top:55px;
+    padding-bottom:55px;
+}
+
+.katalog-section .section-heading{
+    margin-bottom:25px;
+}
+
+.katalog-section .section-heading h1{
+    font-size:32px;
+    line-height:1.2;
+    margin:8px 0;
+    color:#102a43;
+}
+
+.katalog-section .section-heading .muted{
+    font-size:15px;
+}
+
+/* GRID */
+
+.produk-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:25px;
+}
+
+/* CARD */
+
+.produk-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.2s;
+}
+
+.produk-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(18,52,81,.08);
+}
+
+/* GAMBAR */
+
+.produk-image{
+    width:100%;
+    height:190px;
+    background:#f4f7fa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.produk-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.no-image{
+    color:#9aa9b5;
+    font-size:14px;
+}
+
+/* INFORMASI */
+
+.produk-info{
+    padding:15px;
+}
+
+.produk-kategori{
+    font-size:12px;
+    color:#7890a4;
+    margin-bottom:6px;
+}
+
+.produk-nama{
+    font-size:15px;
+    font-weight:bold;
+    color:#102a43;
+    margin-bottom:8px;
+}
+
+.produk-harga{
+    font-size:16px;
+    font-weight:bold;
+    color:#102a43;
+    margin-bottom:8px;
+}
+
+.produk-stok{
+    font-size:13px;
+    color:#7890a4;
+    margin-bottom:14px;
+}
+
+/* DETAIL */
+
+.btn-detail{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#102a43;
+    color:#fff;
+    padding:10px;
+    border-radius:7px;
+    font-weight:600;
+    font-size:13px;
+}
+
+.btn-detail:hover{
+    background:#183b56;
+}
+
+/* EMPTY */
+
+.empty{
+    background:#fff;
+    border:1px dashed #ccd7e0;
+    border-radius:10px;
+    padding:40px 20px;
+    text-align:center;
+    color:#7890a4;
+}
+
+/* RESPONSIVE KATALOG */
+
+@media(max-width:1000px){
+
+    .produk-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .produk-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================
+   KATEGORI KATALOG
+========================= */
+
+.kategori-section {
+    margin-top: 35px;
+}
+
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+    margin-bottom: 45px;
+}
+
+.kategori-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 26px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all .2s ease;
+}
+
+.kategori-card:hover {
+    border-color: #102a43;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16,42,67,.08);
+}
+
+.kategori-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #edf3f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.kategori-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: #486581;
+    margin-bottom: 5px;
+}
+
+.kategori-card h3 {
+    color: #102a43;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.kategori-card p {
+    color: #627d98;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.kategori-link {
+    color: #102a43;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .kategori-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   KATALOG
+===================================================== */
+
+.katalog-section {
+    padding-top: 70px;
+}
+
+
+/* =====================================================
+   KATEGORI
+===================================================== */
+
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+    margin-bottom: 55px;
+}
+
+.kategori-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    transition: .2s ease;
+}
+
+.kategori-card:hover {
+    transform: translateY(-3px);
+    border-color: #102a43;
+    box-shadow: 0 8px 20px rgba(16,42,67,.08);
+}
+
+.kategori-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf3f8;
+    border-radius: 10px;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.kategori-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    color: #486581;
+    margin-bottom: 5px;
+}
+
+.kategori-card h3 {
+    color: #102a43;
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.kategori-card p {
+    color: #627d98;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.kategori-link {
+    color: #102a43;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   JUDUL PRODUK
+===================================================== */
+
+.produk-heading {
+    margin-bottom: 22px;
+}
+
+.produk-heading h2 {
+    color: #102a43;
+    font-size: 25px;
+    margin-top: 6px;
+}
+
+
+/* =====================================================
+   GRID PRODUK
+===================================================== */
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =====================================================
+   CARD PRODUK
+===================================================== */
+
+.produk-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.produk-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16,42,67,.08);
+}
+
+
+/* =====================================================
+   GAMBAR PRODUK
+===================================================== */
+
+.produk-image {
+    height: 230px;
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.produk-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image {
+    color: #9fb3c8;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   INFORMASI PRODUK
+===================================================== */
+
+.produk-info {
+    padding: 18px;
+}
+
+.produk-kategori {
+    font-size: 11px;
+    color: #627d98;
+    margin-bottom: 5px;
+}
+
+.produk-nama {
+    font-size: 17px;
+    color: #102a43;
+    margin-bottom: 10px;
+}
+
+.produk-harga {
+    font-size: 17px;
+    font-weight: bold;
+    color: #102a43;
+    margin-bottom: 5px;
+}
+
+.produk-stok {
+    font-size: 12px;
+    color: #7b8794;
+    margin-bottom: 15px;
+}
+
+.btn-detail {
+    display: block;
+    text-align: center;
+    background: #102a43;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-detail:hover {
+    background: #183b56;
+}
+
+
+/* =====================================================
+   KOSONG
+===================================================== */
+
+.empty {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    color: #627d98;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px) {
+
+    .produk-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .kategori-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produk-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
