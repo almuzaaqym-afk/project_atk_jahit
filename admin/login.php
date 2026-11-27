@@ -7,7 +7,7 @@ require_once "../config/koneksi.php";
 $error = "";
 
 if (isset($_SESSION['id_admin'])) {
-    header("Location: dashboard.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email_admin'] = $admin['email'];
                 $_SESSION['role_admin'] = $admin['role'];
 
-                header("Location: dashboard.php");
+                header("Location: index.php");
                 exit;
 
             } else {

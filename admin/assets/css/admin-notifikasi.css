@@ -1,0 +1,255 @@
+/* =========================================================
+   NAVBAR NOTIFICATION
+========================================================= */
+
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+}
+
+.navbar-notification{
+    position:relative;
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    text-decoration:none;
+    color:#102f4b;
+    background:#f4f7fa;
+    border:1px solid #dce5ec;
+    transition:.2s;
+    flex-shrink:0;
+}
+
+.navbar-notification:hover{
+    background:#eaf0f5;
+    color:#102f4b;
+}
+
+.navbar-notification-icon{
+    font-size:17px;
+    line-height:1;
+}
+
+
+/* =========================================================
+   BADGE NAVBAR
+========================================================= */
+
+.navbar-notification-badge{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+
+    min-width:18px;
+    height:18px;
+
+    padding:0 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:#dc2626;
+    color:#fff;
+
+    border:2px solid #fff;
+
+    font-size:9px;
+    font-weight:700;
+    line-height:1;
+
+    box-sizing:border-box;
+
+    z-index:5;
+}
+
+.navbar-notification-badge[hidden]{
+    display:none !important;
+}
+
+
+/* =========================================================
+   TITIK MERAH PESANAN
+========================================================= */
+
+.notification-order-dot{
+    display:inline-block;
+
+    width:8px;
+    height:8px;
+
+    margin-left:7px;
+
+    border-radius:50%;
+
+    background:#dc2626;
+
+    vertical-align:middle;
+
+    box-shadow:0 0 0 2px #fff;
+
+    animation:notificationPulse 1.5s infinite;
+}
+
+
+/* =========================================================
+   TITIK DI LIVE CHAT
+========================================================= */
+
+.btn-chat-admin{
+    position:relative;
+}
+
+.btn-chat-admin .notification-order-dot{
+    width:8px;
+    height:8px;
+    margin-left:6px;
+}
+
+
+/* =========================================================
+   BADGE PESANAN DI SIDEBAR
+========================================================= */
+
+.sidebar-menu a{
+    position:relative;
+}
+
+.sidebar-pesanan-badge{
+    min-width:18px;
+    height:18px;
+
+    padding:0 5px;
+
+    margin-left:auto;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:#dc2626;
+    color:#fff;
+
+    font-size:9px;
+    font-weight:700;
+    line-height:1;
+
+    box-sizing:border-box;
+
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.admin-dark-mode .navbar-notification{
+    background:#1e293b;
+    border-color:#334155;
+    color:#e2e8f0;
+}
+
+body.admin-dark-mode .navbar-notification:hover{
+    background:#263244;
+    color:#e2e8f0;
+}
+
+body.admin-dark-mode .navbar-notification-badge{
+    border-color:#172033;
+}
+
+body.admin-dark-mode .notification-order-dot{
+    box-shadow:0 0 0 2px #172033;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes notificationPulse{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.18);
+        opacity:.75;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    .navbar-right{
+        gap:9px;
+    }
+
+    .navbar-notification{
+        width:36px;
+        height:36px;
+    }
+
+    .navbar-notification-icon{
+        font-size:16px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .navbar-right{
+        gap:7px;
+    }
+
+    .navbar-notification{
+        width:34px;
+        height:34px;
+        border-radius:9px;
+    }
+
+    .navbar-notification-icon{
+        font-size:15px;
+    }
+
+    .navbar-notification-badge{
+        min-width:17px;
+        height:17px;
+        font-size:8px;
+        top:-4px;
+        right:-4px;
+    }
+
+    .notification-order-dot{
+        width:7px;
+        height:7px;
+        margin-left:5px;
+    }
+
+    .sidebar-pesanan-badge{
+        min-width:17px;
+        height:17px;
+        font-size:8px;
+    }
+
+}

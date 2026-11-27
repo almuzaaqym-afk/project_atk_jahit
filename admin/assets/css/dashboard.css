@@ -1,0 +1,1003 @@
+
+/* =========================================================
+   DASHBOARD ADMIN — TOKO ATK & ALAT JAHIT
+   CSS KHUSUS HALAMAN DASHBOARD
+========================================================= */
+
+:root {
+    --dash-navy: #102640;
+    --dash-navy-dark: #09172b;
+    --dash-navy-light: #1c4567;
+    --dash-gold: #d8b675;
+    --dash-gold-light: #f7edda;
+    --dash-bg: #f4f6fa;
+    --dash-white: #ffffff;
+    --dash-text: #24364b;
+    --dash-muted: #8492a6;
+    --dash-border: #e7ebf1;
+    --dash-shadow: 0 8px 28px rgba(19, 39, 67, 0.055);
+}
+
+/* =========================================================
+   AREA DASHBOARD
+========================================================= */
+
+.admin-content.store-dashboard {
+    width: 100%;
+    max-width: 1650px;
+    margin-inline: auto;
+    padding: 30px clamp(16px, 2.2vw, 36px);
+
+    background:
+        radial-gradient(
+            circle at 5% 0%,
+            rgba(216, 182, 117, 0.07),
+            transparent 24%
+        ),
+        var(--dash-bg);
+}
+
+/* =========================================================
+   WELCOME HERO
+========================================================= */
+
+.store-dashboard .welcome-box {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+    min-height: 185px;
+    margin-bottom: 26px;
+    padding: clamp(24px, 3.2vw, 42px);
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(216, 182, 117, 0.23),
+            transparent 26%
+        ),
+        linear-gradient(
+            120deg,
+            #09172b 0%,
+            #102640 54%,
+            #1b4567 100%
+        );
+
+    border: 1px solid rgba(216, 182, 117, 0.28);
+    border-radius: 22px;
+
+    box-shadow: 0 16px 36px rgba(9, 23, 43, 0.15);
+
+    animation: dashFadeUp 0.65s ease both;
+}
+
+.store-dashboard .welcome-box::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 280px;
+    height: 280px;
+
+    top: -145px;
+    right: 13%;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 28px rgba(255, 255, 255, 0.025),
+        0 0 0 57px rgba(255, 255, 255, 0.02);
+}
+
+.store-dashboard .welcome-box::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 170px;
+    height: 170px;
+
+    right: -55px;
+    bottom: -95px;
+
+    border: 1px solid rgba(216, 182, 117, 0.45);
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 20px rgba(216, 182, 117, 0.05);
+}
+
+.store-dashboard .welcome-box > div:first-child {
+    min-width: 0;
+}
+
+.store-dashboard .welcome-box > div:first-child::before {
+    content: "STORE MANAGEMENT SYSTEM";
+
+    display: inline-block;
+    margin-bottom: 15px;
+
+    color: var(--dash-gold-light);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.8px;
+}
+
+.store-dashboard .welcome-box h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+    font-size: clamp(22px, 2.3vw, 31px);
+    font-weight: 750;
+    line-height: 1.35;
+    letter-spacing: -0.65px;
+}
+
+.store-dashboard .welcome-box p {
+    max-width: 540px;
+    margin: 0;
+
+    color: #c8d5e5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.store-dashboard .welcome-date {
+    flex-shrink: 0;
+
+    padding: 13px 17px;
+
+    color: #f8edda;
+    font-size: 13px;
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(216, 182, 117, 0.35);
+    border-radius: 12px;
+
+    backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   KARTU STATISTIK
+========================================================= */
+
+.store-dashboard .store-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+
+    margin-bottom: 27px;
+}
+
+.store-dashboard .store-stat {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-width: 0;
+    padding: 23px 22px 21px;
+
+    background: var(--dash-white);
+    border: 1px solid var(--dash-border);
+    border-radius: 17px;
+
+    box-shadow: var(--dash-shadow);
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+
+    animation: dashFadeUp 0.65s ease both;
+}
+
+.store-dashboard .store-stat:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.store-dashboard .store-stat:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.store-dashboard .store-stat:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.store-dashboard .store-stat:nth-child(4) {
+    animation-delay: 0.32s;
+}
+
+/* Garis aksen di atas kartu */
+
+.store-dashboard .store-stat::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        var(--dash-navy-light),
+        #88a8c7
+    );
+
+    opacity: 0.95;
+}
+
+.store-dashboard .store-stat:nth-child(2)::before {
+    background: linear-gradient(90deg, #7a65ad, #c0b2e3);
+}
+
+.store-dashboard .store-stat:nth-child(3)::before {
+    background: linear-gradient(90deg, #397f91, #9ed5d8);
+}
+
+.store-dashboard .store-stat:nth-child(4)::before {
+    background: linear-gradient(90deg, #c09b53, #f0dcae);
+}
+
+.store-dashboard .store-stat:hover {
+    transform: translateY(-5px);
+    border-color: rgba(216, 182, 117, 0.6);
+
+    box-shadow: 0 15px 34px rgba(19, 39, 67, 0.10);
+}
+
+.store-dashboard .store-stat-top {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 23px;
+}
+
+.store-dashboard .store-stat-label {
+    color: #74849a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.25px;
+}
+
+.store-dashboard .store-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    color: var(--dash-navy);
+    background: #edf2f8;
+
+    border: 1px solid #e2eaf3;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.store-dashboard .store-stat:nth-child(2) .store-stat-icon {
+    color: #6d579f;
+    background: #f0ecfa;
+    border-color: #e8e0f7;
+}
+
+.store-dashboard .store-stat:nth-child(3) .store-stat-icon {
+    color: #2a7581;
+    background: #e9f6f6;
+    border-color: #d8eeee;
+}
+
+.store-dashboard .store-stat:nth-child(4) .store-stat-icon {
+    color: #9b742f;
+    background: #fff7e8;
+    border-color: #f1e1c0;
+}
+
+.store-dashboard .store-stat:hover .store-stat-icon {
+    transform: rotate(-5deg) scale(1.06);
+}
+
+.store-dashboard .store-stat-number {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 8px;
+
+    color: var(--dash-navy);
+    font-size: clamp(25px, 2.1vw, 32px);
+    font-weight: 800;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+.store-dashboard .store-stat-info {
+    color: var(--dash-muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+/* Kartu omzet */
+
+.store-dashboard .store-stat.money-stat {
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(216, 182, 117, 0.19),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #102640, #173c5a);
+
+    border-color: #244863;
+
+    box-shadow: 0 10px 25px rgba(16, 38, 64, 0.15);
+}
+
+.store-dashboard .money-stat .store-stat-label {
+    color: #cad6e4;
+}
+
+.store-dashboard .money-stat .store-stat-number {
+    color: #ffffff;
+}
+
+.store-dashboard .money-stat .store-stat-info {
+    color: #b7c8d9;
+}
+
+.store-dashboard .money-stat .store-stat-icon {
+    color: var(--dash-gold-light);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(216, 182, 117, 0.3);
+}
+
+/* Rincian stok di dalam kartu */
+
+.store-dashboard .stock-stat-breakdown {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+
+    margin-top: 13px;
+}
+
+.store-dashboard .stock-stat-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    min-width: 0;
+    padding: 11px;
+
+    background: #fff8e9;
+    border: 1px solid #f0e2c6;
+    border-radius: 11px;
+}
+
+.store-dashboard .stock-stat-mini span {
+    color: #8d733d;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.store-dashboard .stock-stat-mini strong {
+    color: #a17626;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.store-dashboard .stock-stat-mini.habis {
+    background: #fff1f1;
+    border-color: #f3dddd;
+}
+
+.store-dashboard .stock-stat-mini.habis span,
+.store-dashboard .stock-stat-mini.habis strong {
+    color: #ba4646;
+}
+
+/* =========================================================
+   AREA KONTEN DAN KARTU
+========================================================= */
+
+.store-dashboard .dashboard-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 21px;
+
+    margin-bottom: 22px;
+}
+
+.store-dashboard .dashboard-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid var(--dash-border);
+    border-radius: 17px;
+
+    box-shadow: var(--dash-shadow);
+
+    animation: dashFadeUp 0.7s ease both;
+}
+
+.store-dashboard .dashboard-columns:nth-of-type(3) .dashboard-card {
+    animation-delay: 0.12s;
+}
+
+.store-dashboard .dashboard-card-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    min-height: 76px;
+    padding: 19px 22px;
+
+    background: linear-gradient(180deg, #ffffff, #fbfcfe);
+    border-bottom: 1px solid #edf0f5;
+}
+
+.store-dashboard .dashboard-card-header::before {
+    content: "";
+
+    position: absolute;
+    top: 23px;
+    bottom: 23px;
+    left: 0;
+
+    width: 3px;
+
+    background: var(--dash-gold);
+    border-radius: 0 4px 4px 0;
+}
+
+.store-dashboard .dashboard-card-header h2 {
+    margin: 0;
+
+    color: var(--dash-navy);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.store-dashboard .dashboard-card-header span {
+    flex-shrink: 0;
+
+    padding: 6px 9px;
+
+    color: #728197;
+    background: #f1f4f8;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.store-dashboard .dashboard-card-body,
+.store-dashboard #dashboardStokContent,
+.store-dashboard #dashboardPembelianContent,
+.store-dashboard #dashboardRingkasanContent {
+    min-width: 0;
+    overflow-x: auto;
+}
+
+/* =========================================================
+   TABEL PESANAN
+========================================================= */
+
+.store-dashboard .dashboard-table {
+    width: 100%;
+    min-width: 520px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.store-dashboard .dashboard-table th {
+    padding: 14px 16px;
+
+    color: #8793a5;
+    background: #f8fafc;
+
+    border-bottom: 1px solid #edf0f5;
+
+    text-align: left;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.store-dashboard .dashboard-table td {
+    padding: 15px 16px;
+
+    color: #506078;
+    background: #ffffff;
+
+    border-bottom: 1px solid #f0f2f6;
+
+    font-size: 12px;
+    line-height: 1.65;
+    vertical-align: middle;
+}
+
+.store-dashboard .dashboard-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.store-dashboard .dashboard-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.store-dashboard .dashboard-table tbody tr:hover td {
+    background: #fbfaf6;
+}
+
+.store-dashboard .order-number {
+    color: var(--dash-navy);
+    font-weight: 800;
+    letter-spacing: 0.1px;
+}
+
+.store-dashboard .dashboard-table td small {
+    display: inline-block;
+    margin-top: 4px;
+
+    color: #99a3b3;
+    font-size: 10px;
+}
+
+.store-dashboard .customer-name {
+    color: #52657d;
+    font-weight: 600;
+}
+
+.store-dashboard .dashboard-table td strong {
+    color: var(--dash-navy);
+    white-space: nowrap;
+}
+
+/* =========================================================
+   BADGE STATUS
+========================================================= */
+
+.store-dashboard .status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 150px;
+    padding: 6px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.store-dashboard .status-badge.waiting {
+    color: #916a1e;
+    background: #fff6df;
+    border-color: #f5e8c7;
+}
+
+.store-dashboard .status-badge.verification {
+    color: #315e9e;
+    background: #edf4ff;
+    border-color: #ddeaff;
+}
+
+.store-dashboard .status-badge.process {
+    color: #6c4aa1;
+    background: #f2edff;
+    border-color: #e5dcfc;
+}
+
+.store-dashboard .status-badge.pickup {
+    color: #27717b;
+    background: #eaf8f8;
+    border-color: #d9eeee;
+}
+
+.store-dashboard .status-badge.success {
+    color: #28774d;
+    background: #eaf8ef;
+    border-color: #d8efdf;
+}
+
+.store-dashboard .status-badge.danger {
+    color: #ad3939;
+    background: #fff0f0;
+    border-color: #f6dddd;
+}
+
+.store-dashboard .status-badge.default {
+    color: #68778a;
+    background: #f0f3f6;
+    border-color: #e5e9ee;
+}
+
+/* =========================================================
+   DAFTAR STOK
+========================================================= */
+
+.store-dashboard .stock-list,
+.store-dashboard .purchase-list {
+    padding: 6px 22px 10px;
+}
+
+.store-dashboard .stock-item,
+.store-dashboard .purchase-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #edf0f4;
+
+    transition: padding 0.2s ease;
+}
+
+.store-dashboard .stock-item:last-child,
+.store-dashboard .purchase-item:last-child {
+    border-bottom: 0;
+}
+
+.store-dashboard .stock-item > div:first-child,
+.store-dashboard .purchase-item > div:first-child {
+    min-width: 0;
+}
+
+.store-dashboard .stock-name {
+    color: #293d55;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.store-dashboard .stock-rack {
+    margin-top: 4px;
+
+    color: #8a97a9;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.store-dashboard .stock-number {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.store-dashboard .stock-number strong {
+    display: block;
+
+    color: #b64b4b;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.store-dashboard .stock-number span {
+    display: inline-block;
+    margin-top: 3px;
+
+    color: #919caf;
+    font-size: 10px;
+}
+
+.store-dashboard .safe-stock {
+    margin: 18px;
+    padding: 23px 18px;
+
+    color: #28774d;
+    background: #eff9f2;
+
+    border: 1px solid #d9efdf;
+    border-radius: 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* =========================================================
+   DAFTAR PEMBELIAN
+========================================================= */
+
+.store-dashboard .purchase-number {
+    color: var(--dash-navy);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.store-dashboard .purchase-supplier {
+    margin-top: 4px;
+
+    color: #8a97a9;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.store-dashboard .purchase-right {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.store-dashboard .purchase-price {
+    color: var(--dash-navy);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+.store-dashboard .purchase-status {
+    display: inline-block;
+    margin-top: 4px;
+
+    color: #7e8b9e;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   RINGKASAN TOKO
+========================================================= */
+
+.store-dashboard #dashboardRingkasanContent .stock-item {
+    padding-block: 16px;
+}
+
+.store-dashboard #dashboardRingkasanContent .stock-number strong {
+    color: var(--dash-navy);
+}
+
+/* =========================================================
+   KONDISI KOSONG
+========================================================= */
+
+.store-dashboard .empty-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 125px;
+    padding: 25px;
+
+    color: #8693a6;
+    background: #fbfcfe;
+
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================================================
+   ANIMASI MASUK
+========================================================= */
+
+@keyframes dashFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+    .store-dashboard .store-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .store-dashboard .dashboard-columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .store-dashboard .store-stat-number {
+        font-size: clamp(25px, 3vw, 32px);
+    }
+}
+
+/* =========================================================
+   HP
+========================================================= */
+
+@media (max-width: 650px) {
+    .admin-content.store-dashboard {
+        padding: 17px 13px;
+    }
+
+    .store-dashboard .welcome-box {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        margin-bottom: 18px;
+        padding: 24px 20px;
+
+        border-radius: 17px;
+    }
+
+    .store-dashboard .welcome-box h2 {
+        font-size: 23px;
+    }
+
+    .store-dashboard .welcome-box p {
+        font-size: 12px;
+    }
+
+    .store-dashboard .welcome-date {
+        align-self: flex-start;
+        padding: 10px 12px;
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .store-dashboard .store-stats {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .store-dashboard .store-stat {
+        padding: 17px 15px;
+        border-radius: 14px;
+    }
+
+    .store-dashboard .store-stat-top {
+        margin-bottom: 17px;
+    }
+
+    .store-dashboard .store-stat-label {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+    }
+
+    .store-dashboard .store-stat-icon {
+        width: 37px;
+        height: 37px;
+        border-radius: 11px;
+        font-size: 13px;
+    }
+
+    .store-dashboard .store-stat-number {
+        font-size: clamp(20px, 5vw, 27px);
+    }
+
+    .store-dashboard .store-stat-info {
+        font-size: 10px;
+    }
+
+    .store-dashboard .stock-stat-breakdown {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .store-dashboard .stock-stat-mini {
+        padding: 8px;
+    }
+
+    .store-dashboard .stock-stat-mini strong {
+        font-size: 16px;
+    }
+
+    .store-dashboard .dashboard-columns {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .store-dashboard .dashboard-card {
+        border-radius: 14px;
+    }
+
+    .store-dashboard .dashboard-card-header {
+        min-height: 66px;
+        padding: 16px;
+    }
+
+    .store-dashboard .dashboard-card-header::before {
+        top: 20px;
+        bottom: 20px;
+    }
+
+    .store-dashboard .dashboard-card-header h2 {
+        font-size: 13px;
+    }
+
+    .store-dashboard .dashboard-card-header span {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+
+    .store-dashboard .stock-list,
+    .store-dashboard .purchase-list {
+        padding-inline: 16px;
+    }
+}
+
+@media (max-width: 390px) {
+    .store-dashboard .store-stats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .store-dashboard .store-stat {
+        padding: 18px;
+    }
+
+    .store-dashboard .store-stat-number {
+        font-size: 27px;
+    }
+
+    .store-dashboard .stock-stat-breakdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .store-dashboard .dashboard-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+/* =========================================================
+   AKSESIBILITAS: KURANGI GERAKAN
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .store-dashboard *,
+    .store-dashboard *::before,
+    .store-dashboard *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
